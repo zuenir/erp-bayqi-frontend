@@ -69,12 +69,12 @@ const MyReportForm = ({
   const [isPrint, setIsPrint] = useState(false);
   const [dataTimeStart, setDataTimeStart] = useState("");  
 
-  const [formData, setFormData] = useState({
+  /*const [formData, setFormData] = useState({
     note: "",
     dateTime: "",
     metaGraphic: "",
     activityGraphic: "",
-  });
+  });*/
 
   const handlePieChart = () => {
     var pieLabel = [];
@@ -171,7 +171,12 @@ const MyReportForm = ({
   };
 
   const formik = useFormik({
-    initialValues: formData,
+    initialValues: {
+      note: "",
+      dateTime: "",
+      metaGraphic: "",
+      activityGraphic: ""
+    },
     enableReinitialize: true,
     onSubmit: async () => {
       try {
