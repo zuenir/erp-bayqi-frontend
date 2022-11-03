@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Link as RouterLink } from "react-router-dom";
 import { useFormik, Form, FormikProvider } from "formik";
-import * as Yup from "yup";
+//import * as Yup from "yup";
 
 // material
 import {
@@ -84,12 +84,12 @@ const ReportForm = ({
     store_activity: "",
   });
 
-  const ReportSchema = Yup.object().shape({
+  /*const ReportSchema = Yup.object().shape({
     status: Yup.string().required("O Status do Contrato é obrigatório"),
     store: Yup.string().required("O Status da Loja é obrigatório"),
     activity: Yup.string().required("Parceiro é obrigatório"),
     operation: Yup.string().required("Actividae é obrigatório"),
-  });
+  });*/
 
   const handleChangeStart = (newValue) => {
     setFormData({

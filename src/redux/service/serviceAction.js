@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { saveAs } from "file-saver";
+import {fDate} from '../../utils/formatTime';
 
 // 
 export const sendEmail = createAsyncThunk(
@@ -37,7 +38,7 @@ export const generatePDF = createAsyncThunk(
         )
         .then((res) => {
           const pdfBlob = new Blob([res.data], { type: "application/pdf" });
-          const report = formData.operation + "_" + " ";
+          const report = formData.operation + "_" + fDate(new Date());
           saveAs(pdfBlob, `${report}.pdf`);
         });
       return res.data;
